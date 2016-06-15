@@ -25,12 +25,42 @@ const AppRouter = createRouter(() => ({
   tabLanding: () => TabLandingScreen,
 }));
 
+// Example from Exponent chat
+// @skevy
+/* renderLeft: (routeState, props) => {
+   return <FindPeopleButton />;
+   },
+   renderRight: ({
+   params: { isOwnProfile, isPrivate, username },
+   config: { eventEmitter },
+   }) => {
+   if (isPrivate === undefined &&
+   isOwnProfile === undefined) {
+   return null;
+   }
+   if (isOwnProfile) {
+   return isPrivate ? null : <ShareButton events={eventEmitter} />;
+   } else if (!isOwnProfile && username) {
+   return <EllipsisButton events={eventEmitter} />;
+   }
+   }, */
+
 @AppRouter.makeRoute()
 @withNavigation
 class LandingScreen extends Component {
   static navigation = {
     navigationBar: {
-      title: 'Landing',
+      title: 'Dude',
+      renderLeft: () => {
+        return <Text>Yo</Text>;
+      },
+      renderRight: () => {
+        return <Text>Yo</Text>;
+      },
+      renderTitle: () => {
+        return <Text>XXX</Text>;
+      }
+
     },
   }
 
